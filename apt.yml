@@ -3,8 +3,8 @@
 # Title         : apt.yml
 # Description   : Update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 # Author        : Veltys
-# Date          : 2022-12-26
-# Version       : 1.1.2
+# Date          : 2022-12-27
+# Version       : 1.1.3
 # Usage         : sh apt.yml | bash apt.yml | ./apt.yml
 # Notes         : It is not necessary to be super user for it to work correctly, but it is necessary to become it (become, do you get it?)
 
@@ -48,7 +48,7 @@
 
       - name: Netdata updater
         register: updatend
-        ansible.builtin.shell: "/usr/libexec/netdata/netdata-updater.sh"
+        ansible.builtin.shell: "tmux new-session '/usr/libexec/netdata/netdata-updater.sh'"
 
       - name: Display the last line of the Netdata task if not changed
         ansible.builtin.debug:
