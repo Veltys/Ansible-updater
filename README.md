@@ -9,6 +9,10 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 
 ## Changelog
+### [1.3.0] - 2022-12-27
+#### Added:
+- CI tests.
+
 ### [1.2.0] - 2022-12-27
 #### Added:
 - Tags.

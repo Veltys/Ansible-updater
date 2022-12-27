@@ -1,0 +1,34 @@
+# Title         : tester.yml
+# Description   : Configures GitHub Actions to perform integration tests
+# Author        : Veltys
+# Date          : 2022-12-27
+# Version       : 1.2.2
+# Usage         : (used externally)
+# Notes         : 
+
+
+name: Testing Action
+
+on: 
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+
+      - name: "Tester"
+        shell: bash
+        env:
+          PASSPHRASE:		${{ secrets.PASSPHRASE }}
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output inventory.yml inventory.yml.gpg
+          ansible-playbook -i inventory.yml apt.yml
