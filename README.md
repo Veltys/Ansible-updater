@@ -9,13 +9,16 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 
 ## Version history
-- 1.0.0:
-    - Basic playbook creation **apt.yml**.
+- 1.1.2:
+    - Added Codacy badge.
+    - Fixed some cosmetic issues.
+- 1.1.1:
+    - Repo, **LICENSE.MD**, **README.MD** and other file creation.
+    - Added shebang in **apt.yml**.
 - 1.1.0:
     - Added shell module for opkg-based machines.
-- 1.1.1:
-    - Repo, **LICENSE.MD, **README.MD** and other file creation.
-    - Shebang.
+- 1.0.0:
+    - Basic playbook creation **apt.yml**.
 
 
 ## Acknowledgments, sources consulted and other credits
