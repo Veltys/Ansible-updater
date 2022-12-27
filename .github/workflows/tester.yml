@@ -2,7 +2,7 @@
 # Description   : Configures GitHub Actions to perform integration tests
 # Author        : Veltys
 # Date          : 2022-12-27
-# Version       : 1.3.0
+# Version       : 1.3.1
 # Usage         : (used externally)
 # Notes         : 
 
@@ -31,11 +31,17 @@ jobs:
           PASSPHRASE:		${{ secrets.PASSPHRASE }}
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output inventory.yml inventory.yml.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output private_key.pem private_key.pem.gpg
+          mkdir ~/.ssh
+          gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output ~/.ssh/id_rsa private_key.pem.gpg
+          chmod 600 ~/.ssh/id_rsa
 
       - name: "Test"
         shell: bash
-        env:
-          PASSPHRASE:		${{ secrets.PASSPHRASE }}
         run: |
-          ansible-playbook --private-key private_key.pem -i inventory.yml apt.yml
+          ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --skip-tags netdata -i inventory.yml apt.yml
+
+      - name: "Clean"
+        shell: bash
+        run: |
+          rm ~/.ssh/id_rsa
+
