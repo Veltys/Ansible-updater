@@ -8,17 +8,25 @@ Ansible playbook to update the inventory servers thanks to apt or another equiva
 Ansible playbook can be used to update the inventory servers in an automated manner by utilizing the apt or a similar equivalent module, as well as other independent programs that may be necessary to ensure that the servers are fully up to date
 
 
-## Version history
-- 1.1.2:
-    - Added Codacy badge.
-    - Fixed some cosmetic issues.
-- 1.1.1:
-    - Repo, **LICENSE.MD**, **README.MD** and other file creation.
-    - Added shebang in **apt.yml**.
-- 1.1.0:
-    - Added shell module for opkg-based machines.
-- 1.0.0:
-    - Basic playbook creation **apt.yml**.
+## Changelog
+### [1.1.3] - 2022-12-27
+#### Fixed:
+- Better changelog section in **README.md**.
+- Better condition to execute Netdata updating task.
+
+### [1.1.2] - 2022-12-27
+- Added Codacy badge.
+- Fixed some cosmetic issues.
+
+### [1.1.1] - 2022-12-27
+- Repo, **LICENSE.MD**, **README.MD** and other file creation.
+- Added shebang in **apt.yml**.
+
+### [1.1.0] - 2022-12-27
+- Added shell module for opkg-based machines.
+
+### [1.0.0] - 2022-12-27
+- Basic playbook creation **apt.yml**.
 
 
 ## Acknowledgments, sources consulted and other credits
