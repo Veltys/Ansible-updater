@@ -9,6 +9,10 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 
 ## Changelog
+### [1.2.0] - 2022-12-27
+#### Added:
+- Tags.
+
 ### [1.1.4] - 2022-12-27
 #### Added:
 - Tmux command in Netdata updater task.
