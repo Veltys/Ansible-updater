@@ -4,7 +4,7 @@
 # Description   : Update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 # Author        : Veltys
 # Date          : 2022-12-26
-# Version       : 1.1.1
+# Version       : 1.1.2
 # Usage         : sh apt.yml | bash apt.yml | ./apt.yml
 # Notes         : It is not necessary to be super user for it to work correctly, but it is necessary to become it (become, do you get it?)
 
@@ -60,8 +60,7 @@
           msg: "{{updatend.stdout_lines}}"
         when: updatend.changed
 
-      # FIXME: Better condition
-      when: (ansible_facts.hostname == 'Heracles')
+      when: (ansible_facts.architecture == 'armv6l')
 
 
     - name: Old ansible upgrader (opkg) for OpenSPA
