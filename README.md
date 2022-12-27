@@ -1,5 +1,6 @@
 # ansible-apt
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6aa675bb5e4749f885e1b2cbcd01fe51)](https://www.codacy.com/gh/Veltys/ansible-apt/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/ansible-apt&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://github.com/Veltys/ansible-apt/actions/workflows/tester.yml/badge.svg?branch=master)](https://github.com/Veltys/ansible-apt/actions)
 
 Ansible playbook to update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 
@@ -9,6 +10,10 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 
 ## Changelog
+### [1.3.1] - 2022-12-27
+#### Added:
+- GitHub Actions badge.
+
 ### [1.3.0] - 2022-12-27
 #### Added:
 - CI tests.
