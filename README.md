@@ -13,6 +13,7 @@ Ansible playbook can be used to update the inventory servers in an automated man
 ### [1.3.1] - 2022-12-27
 #### Added:
 - GitHub Actions badge.
+- Private key.
 
 ### [1.3.0] - 2022-12-27
 #### Added:
