@@ -10,50 +10,62 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 
 ## Changelog
+### To-do (*TODO*)
+- [ ] Create a to-do list
+
+### [1.3.4] - 2022-12-28
+#### Fixed
+- **README.md** format
+### [1.3.3] - 2022-12-28
+#### Fixed
+- **README.md** format
+
 ### [1.3.2] - 2022-12-27
-#### Fixed:
-- Private key issues.
+#### Fixed
+- Private key issues
 
 ### [1.3.1] - 2022-12-27
-#### Added:
-- GitHub Actions badge.
-- Private key.
+#### Added
+- GitHub Actions badge
+- Private key
 
 ### [1.3.0] - 2022-12-27
-#### Added:
-- CI tests.
+#### Added
+- CI tests
 
 ### [1.2.0] - 2022-12-27
-#### Added:
-- Tags.
+#### Added
+- Tags
 
 ### [1.1.4] - 2022-12-27
-#### Added:
-- Tmux command in Netdata updater task.
+#### Added
+- Tmux command in Netdata updater task
 
 ### [1.1.3] - 2022-12-27
-#### Fixed:
-- Better changelog section in **README.md**.
-- Better condition to execute Netdata updating task.
+#### Fixed
+- Better changelog section in **README.md**
+- Better condition to execute Netdata updating task
 
 ### [1.1.2] - 2022-12-27
-- Added Codacy badge.
-- Fixed some cosmetic issues.
+#### Added
+- Codacy badge
+
+#### Fixed
+- Some cosmetic issues
 
 ### [1.1.1] - 2022-12-27
-- Repo, **LICENSE.MD**, **README.MD** and other file creation.
-- Added shebang in **apt.yml**.
+#### Added
+- Repo, **LICENSE.MD**, **README.MD** and other files
+- Shebang in **apt.yml**
 
 ### [1.1.0] - 2022-12-27
-- Added shell module for opkg-based machines.
+#### Added
+- Shell module for opkg-based machines
 
 ### [1.0.0] - 2022-12-27
-- Basic playbook creation **apt.yml**.
+#### Added
+- Basic playbook **apt.yml**
 
 
 ## Acknowledgments, sources consulted and other credits
-* To the [official Ansible documentation](https://docs.ansible.com/ansible/latest/index.html), for obvious reasons.
-
-
-## To-do (*TODO*)
-- [ ] Create a to-do list
+* To the [official Ansible documentation](https://docs.ansible.com/ansible/latest/index.html), for obvious reasons
