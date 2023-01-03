@@ -17,8 +17,14 @@ Ansible playbook can be used to update the inventory servers in an automated man
 - [ ] Create a to-do list
 
 ### [1.4.0] - 2023-01-03
+#### Added
+- *testing* branch
+
 #### Fixed
 - **LICENSE** format
+
+#### Removed
+- CI data in *master* branch
 
 ### [1.3.4] - 2022-12-28
 #### Added
