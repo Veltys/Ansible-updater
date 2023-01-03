@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/Veltys/Ansible-apt/actions/workflows/tester.yml/badge.svg?branch=master)](https://github.com/Veltys/Ansible-apt/actions)
 [![GitHub commits](https://badgen.net/github/commits/Veltys/Ansible-apt)](https://GitHub.com/Veltys/Ansible-apt/commit/)
 [![GitHub latest commit](https://badgen.net/github/last-commit/Veltys/Ansible-apt)](https://GitHub.com/Veltys/Ansible-apt/commit/)
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Veltys/Ansible-apt/blob/master/LICENSE.md)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Veltys/Ansible-apt/blob/master/LICENSE)
 
 Ansible playbook to update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 
@@ -15,6 +15,10 @@ Ansible playbook can be used to update the inventory servers in an automated man
 ## Changelog
 ### To-do (*TODO*)
 - [ ] Create a to-do list
+
+### [1.4.0] - 2023-01-03
+#### Fixed
+- **LICENSE** format
 
 ### [1.3.4] - 2022-12-28
 #### Added
