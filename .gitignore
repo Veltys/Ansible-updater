@@ -54,3 +54,8 @@ local.properties
 # Archivos de Eclipse
 /.project
 /.settings/
+
+# Otros
+/inventory.yml
+/private_key.pem
+/secrets.tgz
