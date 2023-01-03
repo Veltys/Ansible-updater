@@ -1,6 +1,9 @@
 # Ansible-apt
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6aa675bb5e4749f885e1b2cbcd01fe51)](https://www.codacy.com/gh/Veltys/Ansible-apt/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/Ansible-apt&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://github.com/Veltys/ansible-apt/actions/workflows/tester.yml/badge.svg?branch=master)](https://github.com/Veltys/ansible-apt/actions)
+[![Build Status](https://github.com/Veltys/Ansible-apt/actions/workflows/tester.yml/badge.svg?branch=master)](https://github.com/Veltys/Ansible-apt/actions)
+[![GitHub commits](https://badgen.net/github/commits/Veltys/Ansible-apt)](https://GitHub.com/Veltys/Ansible-apt/commit/)
+[![GitHub latest commit](https://badgen.net/github/last-commit/Veltys/Ansible-apt)](https://GitHub.com/Veltys/Ansible-apt/commit/)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Veltys/Ansible-apt/blob/master/LICENSE.md)
 
 Ansible playbook to update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 
@@ -14,6 +17,9 @@ Ansible playbook can be used to update the inventory servers in an automated man
 - [ ] Create a to-do list
 
 ### [1.3.4] - 2022-12-28
+#### Added
+- More badges
+
 #### Fixed
 - **README.md** format
 - Renamed repo
