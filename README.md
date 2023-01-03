@@ -19,6 +19,7 @@ Ansible playbook can be used to update the inventory servers in an automated man
 ### [1.4.1] - 2023-01-03
 #### Fixed
 - **apt.yml** header
+- New **.gitignore** file
 
 ### [1.4.0] - 2023-01-03
 #### Added
