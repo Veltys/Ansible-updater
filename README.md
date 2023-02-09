@@ -22,6 +22,7 @@ Ansible playbook can be used to update the inventory servers in an automated man
 
 #### Fixed
 - Encryption policy
+- Executable permissions in **updater.yml**
 
 ### [1.4.2] - 2023-02-09
 #### Fixed
