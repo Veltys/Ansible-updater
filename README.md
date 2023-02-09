@@ -20,6 +20,9 @@ Ansible playbook can be used to update the inventory servers in an automated man
 #### Added
 - Support for more distros
 
+#### Fixed
+- Encryption policy
+
 ### [1.4.2] - 2023-02-09
 #### Fixed
 - Some cosmetic changes in **apt.yml**

@@ -61,6 +61,6 @@ local.properties
 .project
 
 # Otros
-/inventory.yml
-/private_key.pem
+/ansible.cfg
 /secrets.tgz
+/.vault_pass
