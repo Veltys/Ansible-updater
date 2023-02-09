@@ -3,8 +3,8 @@
 # Title         : apt.yml
 # Description   : Update the inventory servers thanks to apt or another equivalent module, as well as other independent programs
 # Author        : Veltys
-# Date          : 2023-01-03
-# Version       : 1.2.1
+# Date          : 2023-02-09
+# Version       : 1.2.2
 # Usage         : ansible-playbook apt.yml | sh apt.yml | bash apt.yml | ./apt.yml
 # Notes         : It is not necessary to be super user for it to work correctly, but it is necessary to become it (become, do you get it?)
 
@@ -22,18 +22,15 @@
       - upgrade
 
       block:
-
       - name: Ansible apt update && apt upgrade
         register: updatesys
         ansible.builtin.apt:
           name: "*"
           state: latest
           update_cache: yes
-
-      - name: Display the last line of the apt task if not changed
-        ansible.builtin.debug:
-          msg: "{{updatesys.stdout_lines|last}}"
-        when: not(updatesys.changed)
+        when:
+          ansible_facts.distribution == 'Ubuntu' or
+          ansible_facts.distribution == 'Debian'
 
       - name: Display all the lines of the apt task if changed
         ansible.builtin.debug:
@@ -43,9 +40,9 @@
       - name: Autoremove no longer required packages
         ansible.builtin.apt:
           autoremove: true
-
-      when: (ansible_facts.distribution == 'Ubuntu') or
-            (ansible_facts.distribution == 'Debian')
+        when:
+          ansible_facts.distribution == 'Ubuntu' or
+          ansible_facts.distribution == 'Debian'
 
 
     - name: Netdata updater for Heracles
@@ -54,22 +51,15 @@
       - upgrade
 
       block:
-
       - name: Netdata updater
         register: updatend
         ansible.builtin.shell: "tmux new-session '/usr/libexec/netdata/netdata-updater.sh'"
-
-      - name: Display the last line of the Netdata task if not changed
-        ansible.builtin.debug:
-          msg: "{{updatend.stdout_lines|last}}"
-        when: not(updatend.changed)
 
       - name: Display all the lines of the Netdata task if changed
         ansible.builtin.debug:
           msg: "{{updatend.stdout_lines}}"
         when: updatend.changed
-
-      when: (ansible_facts.architecture == 'armv6l')
+      when: ansible_facts.architecture == 'armv6l'
 
 
     - name: Old ansible upgrader (opkg) for OpenSPA
@@ -78,7 +68,6 @@
       - upgrade
 
       block:
-
       - name: Old ansible updater (opkg)
         ansible.builtin.shell: "opkg update"
 
@@ -90,8 +79,8 @@
         ansible.builtin.debug:
           msg: "{{updatesys.stdout_lines}}"
         when: updatesys.stdout_lines | length > 0
-
-      when: not(
-              (ansible_facts.distribution == 'Ubuntu') or
-              (ansible_facts.distribution == 'Debian')
-            )
+      when:
+        not (
+          ansible_facts.distribution == 'Ubuntu' or
+          ansible_facts.distribution == 'Debian'
+        )
