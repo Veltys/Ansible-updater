@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 
-# Title         : apt.yml
-# Description   : Updates the inventory Debian based servers thanks to apt module
+# Title         : opkg.yml
+# Description   : Updates the inventory OpenSPA based servers thanks to shell module
 # Author        : Veltys
 # Date          : 2023-02-09
 # Version       : 1.0.0
@@ -10,18 +10,16 @@
 
 
 ---
-- name: 'Updater and upgrader for Debian based distros'
-  register: updatesys
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
-    update_cache: yes
+- name: 'Old ansible updater (opkg) for OpenSPA'
+  ansible.builtin.shell:
+    cmd: "opkg update"
 
-- name: 'Display all the lines of the apt task if changed'
+- name: 'Old ansible upgrader (opkg) for OpenSPA'
+  register: updatesys
+  ansible.builtin.shell:
+    cmd: "opkg upgrade"
+
+- name: 'Display the last line of the previous task if not empty'
   ansible.builtin.debug:
     msg: "{{ updatesys.stdout_lines }}"
-  when: updatesys.changed
-
-- name: 'Autoremove no longer required packages'
-  ansible.builtin.apt:
-    autoremove: true
+  when: updatesys.stdout_lines | length > 0

@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 
-# Title         : apt.yml
-# Description   : Updates the inventory Debian based servers thanks to apt module
+# Title         : zypper.yml
+# Description   : Updates the inventory SUSE based servers thanks to zypper module
 # Author        : Veltys
 # Date          : 2023-02-09
 # Version       : 1.0.0
@@ -10,18 +10,19 @@
 
 
 ---
-- name: 'Updater and upgrader for Debian based distros'
+- name: 'Updater and upgrader for SUSE based distros'
   register: updatesys
-  ansible.builtin.apt:
+  community.general.zypper:
     name: "*"
     state: latest
     update_cache: yes
 
-- name: 'Display all the lines of the apt task if changed'
+- name: 'Display all the lines of the zypper task if changed'
   ansible.builtin.debug:
     msg: "{{ updatesys.stdout_lines }}"
   when: updatesys.changed
 
-- name: 'Autoremove no longer required packages'
-  ansible.builtin.apt:
-    autoremove: true
+# No implementado aún:
+# - name: 'Autoremove no longer required packages'
+#   community.general.zypper:
+#     autoremove: true
